@@ -2,7 +2,14 @@
 
 //escenario
 const scene=new THREE.Scene();
-scene.background = new THREE.Color(0xFDB98E)
+scene.background = new THREE.Color(0x6279EB)
+
+
+ let loader = new THREE.TextureLoader() 
+ loader.load('../img/Seaa.jfif',function(texture){
+    scene.background= texture
+
+}) 
 
 //camara
 const camera = new THREE.PerspectiveCamera( 75, 
@@ -14,11 +21,11 @@ renderer.setSize( window.innerWidth, window.innerHeight );
 document.body.appendChild( renderer.domElement );
 
 //Geometria 
-const geometry = new THREE.ConeGeometry( 5, 20, 32 );
+const geometry = new THREE.SphereGeometry( 10, 20, 20 );
 
 //textura
 const textureLoader= new THREE.TextureLoader();
-const matcap=textureLoader.load("../img/beautiful-closeup-shot-of-brown-fresh-black-coffee-beans.jpg");
+const matcap=textureLoader.load("../img/summer-background-of-sea-water.jpg");
 const material= new THREE.MeshMatcapMaterial();
 
 material.matcap=matcap;
