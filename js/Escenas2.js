@@ -21,7 +21,7 @@ document.body.appendChild( renderer.domElement );
 
 
 
-const geometry = new THREE.CapsuleGeometry( 1, 1, 4, 8 );    
+const geometry = new THREE.CapsuleGeometry( 1, 1, 1, 4 );    
 
 //textura
 const textureLoader= new THREE.TextureLoader();

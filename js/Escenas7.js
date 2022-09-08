@@ -21,7 +21,7 @@ renderer.setSize( window.innerWidth, window.innerHeight );
 document.body.appendChild( renderer.domElement );
 
 //Geometria 
-const geometry = new THREE.SphereGeometry( 10, 20, 20 );
+const geometry = new THREE.SphereGeometry( 10, 20, 5 );
 
 //textura
 const textureLoader= new THREE.TextureLoader();

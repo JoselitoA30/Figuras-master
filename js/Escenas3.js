@@ -4,7 +4,7 @@ scene.background= new THREE.Color(0x800ad9);
 let loader = new THREE.TextureLoader() 
 loader.load('../img/Oess.jpg',function(texture){
  scene.background= texture
-}) 
+})  
 
 //camara
 const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
@@ -17,25 +17,26 @@ document.body.appendChild( renderer.domElement );
 
 
 //geometria
+const material = new THREE.MeshStandardMaterial()
 
 
-const geometry = new THREE.TorusKnotGeometry( 10, 3, 100, 16 );   
+material.color.set("#00FA15")
+material.metalness = 1;
+material.roughness = 0;
 
-const material = new THREE.MeshStandardMaterial( );
-material.metalness=1;
-material.roughness=0.2;
+const ambientalight = new THREE.AmbientLight(0xF7285D, 10000);
+scene.add(ambientalight)
 
-scene.background=new THREE.Color(0xeeeeee)
+const pointlight = new THREE.PointLight(0xF7285D, 5000,10000)
+scene.add(pointlight)
+pointlight.position.set(5, 5, 5)
 
+const geometry = new THREE.TorusKnotGeometry( 10, 3, 100, 16, 9, 5);
 
 const cube = new THREE.Mesh( geometry, material );
 scene.add( cube );
 
 
-
-const edges = new THREE.EdgesGeometry( geometry );
-const line = new THREE.LineSegments( edges, new THREE.LineBasicMaterial( { color: 0xEB1100 } ) );
-scene.add( line );
 
 
 /* camera.position.x = -10;
@@ -48,8 +49,7 @@ function animate() {
     cube.rotation.y += 0.01;
     requestAnimationFrame( animate );
 	renderer.render( scene, camera );
-    line.rotation.x += 0.01;
-    line.rotation.y += 0.01;
+
 }
 animate();
 
