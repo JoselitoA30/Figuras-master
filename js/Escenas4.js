@@ -40,6 +40,10 @@ const line = new THREE.LineSegments( edges, new THREE.LineBasicMaterial( { color
 scene.add( line );
 scene.add( cube );
 
+
+
+
+
 /* camera.position.x = -10;
 camera.position.y = 1; */
 camera.position.z = 30;

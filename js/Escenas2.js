@@ -32,7 +32,6 @@ material.matcap=matcap;
 material.flatShading=true;
 
 
-/* const material = new THREE.MeshBasicMaterial( {color: "Blue"} ); */
 const cube = new THREE.Mesh( geometry, material );
 scene.add( cube );
 
