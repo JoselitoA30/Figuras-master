@@ -94,18 +94,37 @@ control.maxDistance=5;
  */
 
 //DragControls
-const control= new THREE.DragControls([cube, line, cub1, lina, cube2, lin], camera, renderer.domElement)
+const dcontrol= new THREE.DragControls([cube, line, cub1, lina, cube2, lin], camera, renderer.domElement);
+dcontrol.deactivate();
+dcontrol.activate();
+
+dcontrol.addEventListener('hoveron', function(event){
+    console.log(event.object);
+    event.object.material.wireframe=true;
+    event.object.scale.y*=2;
+})
+dcontrol.addEventListener('hoveroff', function(event){
+
+    event.object.material.wireframe=false;
+    event.object.scale.y/=2;
+})
+
+
+/* const flyControls= new THREE.FlyControls(camera, renderer.domElement);
+flyControls.movementSpeed=50;
+flyControls.rollSpeed=0.01;
+flyControls.autoForward= false;
+flyControls.dragToLock=false;  */
+
 
 
 lin.position.x=15;
 cube2.position.x=15;
 
-
 lina.position.x=-15;
 cub1.position.x=-15;
-/* camera.position.x = -10;
-camera.position.y = 1; */
-camera.position.z = 10;
+
+camera.position.z = 15;
 
 //funcion 
 function animate() {
@@ -131,6 +150,8 @@ function animate() {
 
     lin.rotation.z+= 0.01;
     lin.rotation.x+= 0.01;
+
+    flyControls.update(0.5);
 }
 
 animate();
