@@ -101,12 +101,12 @@ dcontrol.activate();
 dcontrol.addEventListener('hoveron', function(event){
     console.log(event.object);
     event.object.material.wireframe=true;
-    event.object.scale.y*=3;
+    event.object.scale.y*=2;
 })
 dcontrol.addEventListener('hoveroff', function(event){
 
     event.object.material.wireframe=false;
-    event.object.scale.y/=3;
+    event.object.scale.y/=2;
 })
 
 
