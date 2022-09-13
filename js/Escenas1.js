@@ -82,7 +82,7 @@ scene.add( line );
 //OrbitControls
  let control= new THREE.OrbitControls(camera,renderer.domElement)
 control.minDistance=3;
-control.maxDistance=25;
+control.maxDistance=15;
  
 
 //PointerLockControls
@@ -128,6 +128,11 @@ camera.position.z = 15;
 
 //funcion 
 function animate() {
+    requestAnimationFrame( animate );
+    renderer.render( scene, camera );
+
+
+
     cube.rotation.x += 0.01;
     cube.rotation.y += 0.01;
     cube.rotation.z += 0.01;
@@ -138,8 +143,6 @@ function animate() {
 
     cube2.rotation.x += 0.01;
     cube2.rotation.z += 0.01;
-    requestAnimationFrame( animate );
-	renderer.render( scene, camera );
     line.rotation.x += 0.01;
     line.rotation.y += 0.01;
     line.rotation.z+= 0.01;
