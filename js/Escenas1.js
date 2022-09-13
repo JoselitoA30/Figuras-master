@@ -80,9 +80,9 @@ scene.add( line );
 
  
 //OrbitControls
- let control= new THREE.OrbitControls(camera,renderer.domElement)
+/*  let control= new THREE.OrbitControls(camera,renderer.domElement)
 control.minDistance=3;
-control.maxDistance=15;
+control.maxDistance=15; */
  
 
 //PointerLockControls
@@ -101,12 +101,12 @@ dcontrol.activate();
 dcontrol.addEventListener('hoveron', function(event){
     console.log(event.object);
     event.object.material.wireframe=true;
-    event.object.scale.y*=2;
+    event.object.scale.y*=3;
 })
 dcontrol.addEventListener('hoveroff', function(event){
 
     event.object.material.wireframe=false;
-    event.object.scale.y/=2;
+    event.object.scale.y/=3;
 })
 
 
