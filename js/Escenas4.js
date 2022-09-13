@@ -50,7 +50,7 @@ camera.position.z = 30;
 
 //funcion 
 function animate() {
-    cube.rotation.x += 0.01;
+    cube.rotation.x += 0.02;
     
     line.rotation.x += 0.01;
  
