@@ -80,10 +80,10 @@ scene.add( line );
 
  
 //OrbitControls
-/* let control= new THREE.OrbitControls(camera,renderer.domElement)
+ let control= new THREE.OrbitControls(camera,renderer.domElement)
 control.minDistance=3;
-control.maxDistance=5;
- */
+control.maxDistance=25;
+ 
 
 //PointerLockControls
 /* const control  =new THREE.PointerLockControls(camera,renderer.domElement);
@@ -110,11 +110,11 @@ dcontrol.addEventListener('hoveroff', function(event){
 })
 
 
-/* const flyControls= new THREE.FlyControls(camera, renderer.domElement);
+const flyControls= new THREE.FlyControls(camera, renderer.domElement);
 flyControls.movementSpeed=50;
 flyControls.rollSpeed=0.01;
 flyControls.autoForward= false;
-flyControls.dragToLock=false;  */
+flyControls.dragToLock=false;  
 
 
 
